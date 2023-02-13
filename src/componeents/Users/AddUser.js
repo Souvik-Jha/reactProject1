@@ -40,22 +40,22 @@ const AddUser = (props) => {
         setEnteredAge(event.target.value)
     }
 
-    const errorHandler = () =>{
+    const errorHandler = () => {
         setError(null)
     }
 
     return (
         <div>
-            {error && <ErrorModel title={error.title} message = {error.message} onConfirm={errorHandler}/>}
-                <Card className={classes.input}>
-                    <form onSubmit={addUserHandler}>
-                        <lable htmlFor="username"> Username</lable>
-                        <input id="username" type="text" value={enteredUserName} onChange={userNameChangeHandler} />
-                        <lable htmlFor="age"> Age (Years)</lable>
-                        <input id="age" type="number" value={enteredAge} onChange={ageChangeHandler} />
-                        <Button type="submit">Add User</Button>
-                    </form>
-                </Card>
+            {error && (<ErrorModel title={error.title} message={error.message} onConfirm={errorHandler} />)}
+            <Card className={classes.input}>
+                <form onSubmit={addUserHandler}>
+                    <lable htmlFor="username"> Username</lable>
+                    <input id="username" type="text" value={enteredUserName} onChange={userNameChangeHandler} />
+                    <lable htmlFor="age"> Age (Years)</lable>
+                    <input id="age" type="number" value={enteredAge} onChange={ageChangeHandler} />
+                    <Button type="submit">Add User</Button>
+                </form>
+            </Card>
         </div>
     )
 }
